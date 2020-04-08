@@ -1,0 +1,61 @@
+echo "\e[92m--- Running nmap script HTTP for target: _TARGET_ ---\e[0m"
+nmap.exe -Pn -sSV -p _PORT_ --script=banner,vuln,vulscan/vulscan.nse,http-enum,http-webdav-scan,http-backup-finder,http-trace _TARGET_ -oN "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.script.nmap.txt"
+
+echo "\e[92m--- Running getJS for target: _TARGET_ ---\e[0m"
+getJS -url _PROTOCOL_://_TARGET_:_PORT_ -resolve -complete -output "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.getJS.txt" -verbose
+
+echo "\e[92m--- Running nikto for target: _TARGET_ ---\e[0m"
+nikto -maxtime 15m -output  "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.nikto.txt" -host _PROTOCOL_://_TARGET_:_PORT_
+
+echo "\e[92m--- Running curl for target: _TARGET_ ---\e[0m"
+curl -i -s -o "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.curl.txt" "_PROTOCOL_://_TARGET_:_PORT_"
+
+echo "\e[92m--- Running wappalyzer for target: _TARGET_ ---\e[0m"
+wappalyzer "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.wappalyzer.json"
+
+echo "\e[92m--- Running webscreenshot for target: _TARGET_ ---\e[0m"
+webscreenshot.py --no-xserver -r phantomjs -o "_OUTPUT_/_PROTOCOL_/" "_PROTOCOL_://_TARGET_:_PORT_"
+
+echo "\e[92m--- Running aquatone for target: _TARGET_ ---\e[0m"
+echo "_PROTOCOL_://_TARGET_:_PORT_" | aquatone.exe -silent -out "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.aquatone"
+
+echo "\e[92m--- Running webtech for target: _TARGET_ ---\e[0m"
+webtech -u "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.webtech.txt"
+
+echo "\e[92m--- Running waybackurls for target: _TARGET_ ---\e[0m"
+waybackurls "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.waybackurls.txt"
+
+echo "\e[92m--- Running photon for target: _TARGET_ ---\e[0m"
+photon -t _THREADS_ -u "_PROTOCOL_://_TARGET_:_PORT_" -o "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.photon" -e csv
+
+echo "\e[92m--- Running goohak for target: _TARGET_ ---\e[0m"
+goohak "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.goohak.txt"
+
+echo "\e[92m--- Running hakrawler for target: _TARGET_ ---\e[0m"
+hakrawler -url "_PROTOCOL_://_TARGET_:_PORT_" -all > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.hakrawler.txt"
+
+echo "\e[92m--- Running dirhunt for target: _TARGET_ ---\e[0m"
+dirhunt -t _THREADS_ "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.dirhunt.txt"
+
+echo "\e[92m--- Running h2t for target: _TARGET_ ---\e[0m"
+h2t scan "_PROTOCOL_://_TARGET_:_PORT_" > "__OUTPUT_/PROTOCOL_/_TARGET_._PORT_.h2t.txt"
+
+echo "\e[92m--- Running corsyr for target: _TARGET_ ---\e[0m"
+corsy -u "_PROTOCOL_://_TARGET_:_PORT_" -o "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_"
+
+echo "\e[92m--- Running corstest for target: _TARGET_ ---\e[0m"
+cat "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.corstest.input.txt"
+corstest "_TARGET_._PORT_.corstest.input.txt" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.corstest.txt"
+rm  "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.corstest.input.txt"
+
+echo "\e[92m--- Running see-surf for target: _TARGET_ ---\e[0m"
+see-surf -H "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.see-surf.txt"
+
+echo "\e[92m--- Running gospider for target: _TARGET_ ---\e[0m"
+gospider -t _THREADS_ -s "_PROTOCOL_://_TARGET_:_PORT_" -o "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.gospider" -c 10 -d 2
+
+echo "\e[92m--- Running xsstrike for target: _TARGET_ ---\e[0m"
+xsstrike -t _THREADS_ -u "_PROTOCOL_://_TARGET_:_PORT_" --crawl -l 4 > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.xsstrike.txt"
+
+echo "\e[92m--- Running fockcache for target: _TARGET_ ---\e[0m"
+fockcache --hostname "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.fockcache.txt"

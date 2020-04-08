@@ -1,0 +1,26 @@
+echo "\e[92m--- Running theharvester for target: _TARGET_ ---\e[0m"
+theharvester -d _TARGET_ -b google,bing,yahoo,censys,crtsh,netcraft -f "_OUTPUT_/_TARGET_.harvester.html"
+
+echo "\e[92m--- Running subfinder (passive) for target: _TARGET_ ---\e[0m"
+subfinder -d _TARGET_ -o "_OUTPUT_/_TARGET_.subfinder.subdomain.txt" --exclude-sources dnsdumpster,waybackarchive -t _THREADS_
+
+echo "\e[92m--- Running subfinder (brute force) for target: _TARGET_ ---\e[0m"
+subfinder -d _TARGET_ -o "_OUTPUT_/_TARGET_.subfinder.brute.subdomain.txt" -b --no-passive -w "_APP_PATH_/brute-force/common_subdomains.small.txt" -t _THREADS_
+
+echo "\e[92m--- Running knockpy for target: _TARGET_ ---\e[0m"
+cd _OUTPUT_; knockpy -c _TARGET_
+
+echo "\e[92m--- Running assetfinder for target: _TARGET_ ---\e[0m"
+assetfinder _TARGET_ > "_OUTPUT_/_TARGET_.assetfinder.subdomain.txt"
+
+echo "\e[92m--- Running bucketeer for target: _TARGET_ ---\e[0m"
+cd "_APP_PATH_/brute-force/"; bucketeer "_COMPANY_" > "_OUTPUT_/_TARGET_.bucketeer.txt"
+
+echo "\e[92m--- Running amass for target: _TARGET_ ---\e[0m"
+amass.exe enum -d "_TARGET_" -active -oA "_OUTPUT_/_TARGET_.amass.subdomain"
+
+echo "\e[92m--- Running sublist3r for target: _TARGET_ ---\e[0m"
+sublist3r -d _TARGET_ -o "_OUTPUT_/_TARGET_.sublist3r.subdomain.txt" -t _THREADS_ -e yahoo,baidu,google,bing,ask,netcraft,virustotal,threatcrowd,ssl,passivedns
+
+echo "\e[92m--- Running gitrob for target: _TARGET_ ---\e[0m"
+timeout 900 gitrob -threads _THREADS_ -save "_OUTPUT_/_TARGET_.gitrob.json" "_COMPANY_"

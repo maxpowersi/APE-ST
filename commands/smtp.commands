@@ -1,0 +1,8 @@
+echo "\e[92m--- Running nmap script SMTP for target: _TARGET_ ---\e[0m"
+nmap.exe -Pn -sSV -p _PORT_ --script=vuln,vulscan/vulscan.nse,banner,smtp-open-relay,smtp-commands -oA "_OUTPUT_/smtp/_TARGET_._PORT_.script" _TARGET_
+
+echo "\e[92m--- Running smtp-user for target: _TARGET_ ---\e[0m"
+smtp-user-enum -U "_APP_PATH_/brute-force/common_usernames.small.txt" -M VRFY -t _TARGET_ -p _PORT_ > "_OUTPUT_/smtp/_TARGET_._PORT_.smtp-user-enum.txt"
+
+echo "\e[92m--- Running checker smtp for target: _TARGET_ ---\e[0m"
+checker -T _THREADS_ -t _TARGET_ -p _PORT_ -o  "_OUTPUT_/smtp/_TARGET_._PORT_.openRelayMagic.txt"

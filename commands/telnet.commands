@@ -1,0 +1,5 @@
+echo "\e[92m--- Running nmap script TELNET for target: _TARGET_ ---\e[0m"
+nmap.exe -Pn -sSV -p _PORT_ --script=vuln,vulscan/vulscan.nse,banner,telnet-ntlm-info -oA "_OUTPUT_/telnet/_TARGET_._PORT_.script" _TARGET_
+
+echo "\e[92m--- Running ncrack TELNET for target: _TARGET_ ---\e[0m"
+ncrack  -v -U "_APP_PATH_/brute-force/usernames.telnet.txt" -P "_APP_PATH_/brute-force/passwords.telnet.txt" -p ssh:_PORT_ -oA "_OUTPUT_/telnet/_TARGET_._PORT_.ncrack" _TARGET_

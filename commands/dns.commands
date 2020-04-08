@@ -1,0 +1,2 @@
+echo "\e[92m--- Running nmap script DNS for target: _TARGET_ ---\e[0m"
+nmap.exe -Pn -sSV -p _PORT_ --script=vuln,vulscan/vulscan.nse,banner,dns-cache-snoop,dns-recursion -oA "_OUTPUT_/dns/_TARGET_._PORT_.script" _TARGET_
