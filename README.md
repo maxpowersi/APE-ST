@@ -151,20 +151,20 @@ optional arguments:
   -v, --version     show program's version number and exit
   -m MODULE         module name, it must be recon or scan
   -t TARGET         target, for recon it must be a domain, for scan it must be
-                    a text file with subdomains or IPs
+                    domain, subdomains or IP.
   -o OUTPUTDIR      path to place all outputs
   -q QUEUED         number of queued or threads, each queued will process one
                     resource (IP or subdomain)
 ```
 ## Recon
 ```
-ape.py -m recon -t "domain.com" -o "/home/user/" -q 30
+ape.py -m recon -t "example.com" -o "/home/user/" -q 30
 ```
 ## Scan
 ```
-ape.py -m scan -t "/home/user/domain.com/recon/subdomains.txt" -o "/home/user/domain.com/ -q 30
+ape.py -m scan -t "www.example.com" -o "/home/user/ -q 30
 ```
 ## HTTP Content discovery
 ```
-ape.py -m httpdiscovery -t "/home/user/domain.com/urls.txt" -o "/home/user/domain.com/scan/http-discovery" -q 30 [-e .php,.aspx]
+ape.py -m httpdiscovery -t "http://www.example.com" -o "/home/user/" -q 30 [-e .php,.aspx]
 ```
