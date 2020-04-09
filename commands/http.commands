@@ -17,7 +17,7 @@ echo "\e[92m--- Running webscreenshot for target: _TARGET_ ---\e[0m"
 webscreenshot.py --no-xserver -r phantomjs -o "_OUTPUT_/_PROTOCOL_/" "_PROTOCOL_://_TARGET_:_PORT_"
 
 echo "\e[92m--- Running aquatone for target: _TARGET_ ---\e[0m"
-echo "_PROTOCOL_://_TARGET_:_PORT_" | aquatone.exe -threads _THREADS_ -silent -out "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.aquatone"
+echo "_PROTOCOL_://_TARGET_:_PORT_" | aquatone.exe -threads _THREADS_ -out "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.aquatone"
 
 echo "\e[92m--- Running webtech for target: _TARGET_ ---\e[0m"
 webtech -u "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.webtech.txt"

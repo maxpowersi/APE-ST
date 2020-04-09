@@ -9,6 +9,12 @@ import datetime
 def consoleWritte(msg):
     os.system("printf \"\e[92m--- {0} ---\e[0m\n\n\"".format(msg))
 
+def createProjectFolder(scanPath, httpDiscoveryPath):        
+    if not os.path.exists(scanPath):
+        os.system("mkdir " + scanPath)
+    if not os.path.exists(httpDiscoveryPath):
+        os.system("mkdir " + httpDiscoveryPath)
+
 def validateParameters(parameters):
     if not os.path.exists(parameters.outputDir):
         print ("The argument -o (output dir) is invalid, it must be a valid path")
@@ -56,7 +62,8 @@ validateParameters(parameters)
 #Parameters
 target = parameters.target
 extensions = parameters.extensions
-scanPath = parameters.outputDir
+scanPath = os.path.join(parameters.outputDir, "scan")
+httpDiscoveryPath = os.path.join(scanPath, "http-discovery")
 threads = parameters.queued
 
 #Paths
@@ -65,8 +72,10 @@ apePath  =  os.path.dirname(os.path.realpath(__file__))
 commandsFolderPath = os.path.join(apePath, "commands")
 commandsFilePath = os.path.join(commandsFolderPath, "http.discovery.commands")
 
+createProjectFolder(scanPath, httpDiscoveryPath)
+
 #Init http discovery scan
-initHttpScan(commandsFilePath, target, scanPath, threads, apePath, extensions)
+initHttpScan(commandsFilePath, target, httpDiscoveryPath, threads, apePath, extensions)
 
 #Finish
 consoleWritte("The http discovery has finished")

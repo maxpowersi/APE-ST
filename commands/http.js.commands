@@ -5,4 +5,4 @@ echo "\e[92m--- Running nmap script FTP for target: _TARGET_ ---\e[0m"
 retire --jspath "_OUTPUT_/_PROTOCOL_/JS/" --outputformat "text" --outputpath "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.retire.txt"
 
 echo "\e[92m--- Running nmap script FTP for target: _TARGET_ ---\e[0m"
-linkfinder -i "__OUTPUT_/_PROTOCOL_/JS/" -o "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.linkFinder.html"
+linkfinder -i "_OUTPUT_/_PROTOCOL_/JS/" -o "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.linkFinder.html"

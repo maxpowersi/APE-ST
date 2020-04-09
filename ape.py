@@ -48,7 +48,7 @@ else:
     else:
         #is http discover
         if not validators.url(parameters.target):
-            print("The argument -t (target) is invalid, it must be a text file with IPs or subdomains.")
+            print("The argument -t (target) is invalid, it must be an URL.")
             sys.exit()
         
 if not os.path.exists(parameters.outputDir):

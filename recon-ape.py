@@ -68,7 +68,7 @@ organization = target.split(".")[0]
 # Internal paths
 apePath = os.path.dirname(os.path.realpath(__file__))
 
-projectPath = os.path.join(parameters.outputDir, target)
+projectPath = parameters.outputDir
 reconPath = os.path.join(projectPath, "recon")
 
 commandsFolderPath = os.path.join(apePath, "commands")

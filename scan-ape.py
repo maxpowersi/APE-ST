@@ -5,6 +5,7 @@ import sys
 import os
 import datetime
 import re
+from urllib.parse import urlparse
 
 def consoleWritte(msg):
     print('\033[34m--- ' + msg + ' ---\033[0m')
@@ -24,8 +25,10 @@ def validateParameters(parameters):
         print("The argument -q (queued) is invalid, min 1, max 500")
         sys.exit()
 
-def createProjectFolder(scanPath, servicesFolder):
-    if not os.path.exists(scanPath): os.system("mkdir " + scanPath)
+def createProjectFolder(scanPath, servicesFolder, ):
+    if not os.path.exists(scanPath):
+        os.system("mkdir " + scanPath)
+
     for servicePath in servicesFolder:
         if not os.path.exists(servicePath): os.system("mkdir " + servicePath)
 
@@ -41,7 +44,7 @@ def initHostScan(scanPath, target, hostCommandsPath, queued, organization):
         command = command.replace("_COMPANY_", organization)
         if "Running" not in command: 
             print('\033[93m' + command + '\033[0m')
-        os.system(command)
+       os.system(command)
     f.close()
 
 def initServiceScan(commandsFiles, scanPath, target, queued, organization, commandsFolderPath):
