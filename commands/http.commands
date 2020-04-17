@@ -59,3 +59,6 @@ xsstrike -t _THREADS_ -u "_PROTOCOL_://_TARGET_:_PORT_" --crawl -l 4 > "_OUTPUT_
 
 echo "\e[92m--- Running fockcache for target: _TARGET_ ---\e[0m"
 fockcache --hostname "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.fockcache.txt"
+
+echo "\e[92m--- Running linkfinder for target: _TARGET_ ---\e[0m"
+linkfinder -d -i "_PROTOCOL_://_TARGET_:_PORT_" -o "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.linkFinder.html"

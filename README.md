@@ -66,9 +66,12 @@ The HTTP Scaner is divide in sequencial 3 pipelines.
 - injectus (TODO)
 - XSStrike
 - fockcache
+- linkfinder
 ### Second Pipeline (JS Scan)
 - retire
-- linkfinder
+- js-beautify
+- DumpsterDiver
+- api_key_detect
 ### Last Pipeline (HTTP content discovery)
 Must be invoke in a manually way. Please for more information, read the help.
 - ohmybackup (short list, searching for backups)

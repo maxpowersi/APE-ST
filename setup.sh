@@ -10,6 +10,7 @@ pip install validators
 pip install webtech
 pip3 install dirhunt
 npm install -g retire
+npm -g install js-beautify
 npm i -g wappalyzer
 go get github.com/OJ/gobuster
 go get -u github.com/tomnomnom/httprobe
@@ -47,4 +48,6 @@ git clone https://github.com/Nekmo/dirhunt.git
 git clone https://github.com/hakluke/hakrawler.git
 git clone https://github.com/bl4ckmamb4/OpenRelayMagic.git
 git clone https://github.com/s0md3v/XSStrike.git
+git clone https://github.com/securing/DumpsterDiver
+git clone https://github.com/daylen/api-key-detect
 #TODO; go to repo and install the tool, and add to the path
