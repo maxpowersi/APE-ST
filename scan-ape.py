@@ -14,8 +14,8 @@ def validateParameters(parameters):
     regexIP = '''^(25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)'''
 
     if not validators.domain(parameters.target) and re.search(regexIP, parameters.target) is None:
-        print("The argument -t (target) is invalid, it must be a text file with IPs or subdomains.")
-        sys.exit()
+        print("The argument -t (target) is invalid, it must be a domain, subdomain or IP ")
+        #sys.exit()
 
     if not os.path.exists(parameters.outputDir):
         print("The argument -o (output dir) is invalid, it must be a valid folder")
@@ -44,7 +44,7 @@ def initHostScan(scanPath, target, hostCommandsPath, queued, organization):
         command = command.replace("_COMPANY_", organization)
         if "Running" not in command: 
             print('\033[93m' + command + '\033[0m')
-       os.system(command)
+        os.system(command)
     f.close()
 
 def initServiceScan(commandsFiles, scanPath, target, queued, organization, commandsFolderPath):

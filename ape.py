@@ -43,8 +43,7 @@ else:
             25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)\.( 
             25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)'''
         if not validators.domain(parameters.target) and re.search(regexIP, parameters.target) is None:
-            print("The argument -t (target) is invalid, it must be a text file with IPs or subdomains.")
-            sys.exit()
+            print("The argument -t (target) is invalid, it must be a domain, subdomain or IP .")
     else:
         #is http discover
         if not validators.url(parameters.target):
