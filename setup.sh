@@ -7,7 +7,7 @@ sudo apt-get install smtp-user-enum
 sudo apt-get install sslscan
 sudo apt-get install nikto
 pip install validators
-pip install webtech
+pip3 install webscreenshot
 pip3 install dirhunt
 npm install -g retire
 npm -g install js-beautify
@@ -28,7 +28,6 @@ wget https://testssl.sh/testssl.sh
 git clone https://github.com/ernw/nmap-parse-output.git
 git clone https://github.com/codingo/Interlace.git
 git clone https://github.com/ernw/nmap-parse-output.git
-git clone https://github.com/maaaaz/webscreenshot.git
 git clone https://github.com/aboul3la/Sublist3r.git
 git clone https://github.com/tomdev/teh_s3_bucketeers.git
 git clone https://github.com/guelfoweb/knock.git

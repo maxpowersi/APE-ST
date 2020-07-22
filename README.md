@@ -55,7 +55,6 @@ The HTTP Scaner is divide in sequencial 3 pipelines.
 - wappalyzer
 - webscreenshot
 - aquatone
-- webtech
 - waybackurls
 - photon
 - h2t

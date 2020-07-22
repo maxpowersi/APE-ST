@@ -19,9 +19,6 @@ webscreenshot.py --no-xserver -r phantomjs -o "_OUTPUT_/_PROTOCOL_/" "_PROTOCOL_
 echo "\e[92m--- Running aquatone for target: _TARGET_ ---\e[0m"
 echo "_PROTOCOL_://_TARGET_:_PORT_" | aquatone.exe -threads _THREADS_ -out "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.aquatone"
 
-echo "\e[92m--- Running webtech for target: _TARGET_ ---\e[0m"
-webtech -u "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.webtech.txt"
-
 echo "\e[92m--- Running waybackurls for target: _TARGET_ ---\e[0m"
 waybackurls "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.waybackurls.txt"
 
@@ -41,10 +38,10 @@ echo "\e[92m--- Running h2t for target: _TARGET_ ---\e[0m"
 h2t scan "_PROTOCOL_://_TARGET_:_PORT_" > "__OUTPUT_/PROTOCOL_/_TARGET_._PORT_.h2t.txt"
 
 echo "\e[92m--- Running corsyr for target: _TARGET_ ---\e[0m"
-corsy -u "_PROTOCOL_://_TARGET_:_PORT_" -o "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_"
+corsy -u "_PROTOCOL_://_TARGET_:_PORT_" -o "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.corsy.txt"
 
 echo "\e[92m--- Running corstest for target: _TARGET_ ---\e[0m"
-cat "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.corstest.input.txt"
+echo "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.corstest.input.txt"
 corstest "_TARGET_._PORT_.corstest.input.txt" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.corstest.txt"
 rm  "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.corstest.input.txt"
 
