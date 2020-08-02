@@ -14,7 +14,7 @@ echo "\e[92m--- Running wappalyzer for target: _TARGET_ ---\e[0m"
 wappalyzer "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.wappalyzer.json"
 
 echo "\e[92m--- Running webscreenshot for target: _TARGET_ ---\e[0m"
-webscreenshot.py --no-xserver -r phantomjs -o "_OUTPUT_/_PROTOCOL_/" "_PROTOCOL_://_TARGET_:_PORT_"
+webscreenshot --no-xserver -r phantomjs -o "_OUTPUT_/_PROTOCOL_/" "_PROTOCOL_://_TARGET_:_PORT_"
 
 echo "\e[92m--- Running aquatone for target: _TARGET_ ---\e[0m"
 echo "_PROTOCOL_://_TARGET_:_PORT_" | aquatone.exe -threads _THREADS_ -out "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.aquatone"
@@ -35,10 +35,10 @@ echo "\e[92m--- Running dirhunt for target: _TARGET_ ---\e[0m"
 dirhunt -t _THREADS_ "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.dirhunt.txt"
 
 echo "\e[92m--- Running h2t for target: _TARGET_ ---\e[0m"
-h2t scan "_PROTOCOL_://_TARGET_:_PORT_" > "__OUTPUT_/PROTOCOL_/_TARGET_._PORT_.h2t.txt"
+h2t scan "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.h2t.txt"
 
 echo "\e[92m--- Running corsyr for target: _TARGET_ ---\e[0m"
-corsy -u "_PROTOCOL_://_TARGET_:_PORT_" -o "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.corsy.txt"
+corsy -u "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.corsy.txt"
 
 echo "\e[92m--- Running corstest for target: _TARGET_ ---\e[0m"
 echo "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.corstest.input.txt"

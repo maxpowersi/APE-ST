@@ -117,11 +117,15 @@ commandsFiles =  [("ftp", "ftp.commands", "ftp"),
                   ("domain", "dns.commands", "dns"),
                   ("ms-wbt-server", "rdp.commands", "rdp"),
                   ("telnet", "telnet.commands", "telnet"),
+                  
                   ("http", "http.commands", "http"),
+                  ("https", "http.commands", "https"),
+                  
                   ("ssl", "https.commands", "https"),
                   ("https", "https.commands", "https"),
-                  ("ssl", "http.commands", "https"),
-                  ("https", "http.commands", "https")]
+                  ("ssl", "http.commands", "https")
+                  
+                  ]
 
 httpJSService =  [("https", "http.js.commands", "https"), ("http", "http.js.commands", "http"), ("ssl", "http.js.commands", "https")]
 
