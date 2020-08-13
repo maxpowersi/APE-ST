@@ -24,3 +24,6 @@ sublist3r -d _TARGET_ -o "_OUTPUT_/_TARGET_.sublist3r.subdomain.txt" -t _THREADS
 
 echo "\e[92m--- Running gitrob for target: _TARGET_ ---\e[0m"
 timeout 900 gitrob -threads _THREADS_ -save "_OUTPUT_/_TARGET_.gitrob.json" "_COMPANY_"
+
+echo "\e[92m--- Running festin for target: _TARGET_ ---\e[0m"
+festin -c _THREADS_ _TARGET_ -ra "_OUTPUT_/_TARGET_.festin.txt"

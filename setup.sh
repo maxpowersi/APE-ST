@@ -9,6 +9,7 @@ sudo apt-get install nikto
 pip install validators
 pip3 install webscreenshot
 pip3 install dirhunt
+pip3 install festin
 npm install -g retire
 npm -g install js-beautify
 npm i -g wappalyzer

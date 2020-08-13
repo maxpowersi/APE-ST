@@ -29,6 +29,7 @@ This module will run all recon tools in the file "recon.commands.txt". By defaul
 - assetfinder
 - Gitrob
 - teh_s3_bucketeers
+- festin
 - git-scanner (TODO search repo in target URL)
 - git-secrets (TODO For repo found and downloaded)
 - truffleHog (TODO For repo found)
