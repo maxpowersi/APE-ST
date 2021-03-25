@@ -1,2 +1,2 @@
 echo "\e[92m--- Running nmap script SMB for target: _TARGET_ ---\e[0m"
-nmap.exe -Pn -sSV -p _PORT_ --script=vuln,vulscan/vulscan.nse,smb-enum-users,banner,smb-protocols,smb-enum-shares,smb-vuln-ms17-010 -oA "_OUTPUT/smb/_TARGET_._PORT_.script" _TARGET_
+nmap -Pn -sSV -p _PORT_ --script=vuln,vulscan/vulscan.nse,smb-enum-users,banner,smb-protocols,smb-enum-shares,smb-vuln-ms17-010 -oA "_OUTPUT/smb/_TARGET_._PORT_.script" _TARGET_
