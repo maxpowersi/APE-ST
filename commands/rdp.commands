@@ -1,5 +1,5 @@
 echo "\e[92m--- Running nmap script RDP for target: _TARGET_ ---\e[0m"
-nmap.exe -Pn -sSV -p _PORT_ --script=vuln,vulscan/vulscan.nse,banner,rdp-ntlm-info,rdp-vuln-ms12-020 -oA "_OUTPUT_/rdp/_TARGET_._PORT_.script" _TARGET_
+nmap -Pn -sSV -p _PORT_ --script=vuln,vulscan/vulscan.nse,banner,rdp-ntlm-info,rdp-vuln-ms12-020 -oA "_OUTPUT_/rdp/_TARGET_._PORT_.script" _TARGET_
 
 echo "\e[92m--- Running ncrack RDP for target: _TARGET_ ---\e[0m"
 ncrack  -v -U "_APP_PATH_/brute-foce/usernames.rdp.txt" -P "_APP_PATH_/brute-force/passwords.rdp.txt" -p rdp:_PORT_ -oA "_OUTPUT_/rdp/_TARGET_._PORT_.ncrack" _TARGET_
