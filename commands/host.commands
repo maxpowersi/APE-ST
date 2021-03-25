@@ -4,4 +4,4 @@ subjack -w "_OUTPUT_/host/_TARGET_.tempFile.txt" -t 10 -timeout 30 -a -ssl -v -o
 rm "_OUTPUT_/host/_TARGET_.tempFile.txt"
 
 echo "\e[92m--- Running nmap for target: _TARGET_ ---\e[0m"
-nmap.exe -sSV -O -Pn -vvv --top-ports 1000 _TARGET_ -oA "_OUTPUT_/host/_TARGET_.tcp.top1000"
+nmap -sSV -O -Pn -vvv --top-ports 1000 _TARGET_ -oA "_OUTPUT_/host/_TARGET_.tcp.top1000"
