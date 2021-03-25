@@ -1,5 +1,5 @@
 echo "\e[92m--- Running nmap script FTP for target: _TARGET_ ---\e[0m"
-nmap.exe -Pn -sSV -p _PORT_ --script=vuln,vulscan/vulscan.nse,banner,ftp-anon,ftp-bounce,ftp-syst -oA "_OUTPUT_/ftp/_TARGET_._PORT_.script" _TARGET_
+nmap -Pn -sSV -p _PORT_ --script=vuln,vulscan/vulscan.nse,banner,ftp-anon,ftp-bounce,ftp-syst -oA "_OUTPUT_/ftp/_TARGET_._PORT_.script" _TARGET_
 
 echo "\e[92m--- Running ncrack FTP for target: _TARGET_ ---\e[0m"
 ncrack -v -U "_APP_PATH_/brute-force/usernames.ftp.txt" -P "_APP_PATH_/brute-force/passwords.ftp.txt" -p ftp:_PORT_ -oA "_OUTPUT_/ftp/_TARGET_._PORT_.ncrack" _TARGET_
