@@ -57,3 +57,5 @@ git clone https://github.com/rbsec/sslscan.git
 git clone https://github.com/laramies/theHarvester.git
 git clone https://github.com/maurosoria/dirsearch.git
 #TODO; go to repo and install the tool, and add to the path
+git clone https://github.com/scipag/vulscan scipag_vulscan
+ln -s `pwd`/scipag_vulscan /usr/share/nmap/scripts/vulscan    
