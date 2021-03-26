@@ -2,7 +2,7 @@ echo "\e[92m--- Running nmap script HTTP for target: _TARGET_ ---\e[0m"
 nmap -Pn -sSV -p _PORT_ --script=banner,vuln,vulscan/vulscan.nse,http-enum,http-webdav-scan,http-backup-finder,http-trace _TARGET_ -oN "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.script.nmap.txt"
 
 echo "\e[92m--- Running getJS for target: _TARGET_ ---\e[0m"
-getJS -url _PROTOCOL_://_TARGET_:_PORT_ -resolve -complete -output "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.getJS.txt" -verbose
+getJS --url _PROTOCOL_://_TARGET_:_PORT_ --resolve -c-omplete --output "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.getJS.txt" -verbose
 
 echo "\e[92m--- Running nikto for target: _TARGET_ ---\e[0m"
 nikto -maxtime 15m -output  "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.nikto.txt" -host _PROTOCOL_://_TARGET_:_PORT_
