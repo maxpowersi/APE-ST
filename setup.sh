@@ -1,13 +1,12 @@
 mkdir ape-tools
 cd ape-tools
-sudo apt-get install smtp-user-enum
-sudo apt-get install sslscan
-sudo apt-get install xsltproc
-sudo apt-get install nmap
-sudo apt-get install ncrack
-sudo apt-get install nikto
-sudo apt-get install gobuster
+apt install xsltproc
+apt install nmap
+apt install ncrack
+apt install nikto
+apt install gobuster
 pip install validators
+pip install smtp-user-enum
 pip3 install webscreenshot
 pip3 install dirhunt
 pip3 install festin
@@ -23,17 +22,19 @@ go get github.com/tismayil/ohmybackup
 go get github.com/tismayil/fockcache
 go get https://github.com/michenriksen/gitrob
 go get github.com/haccer/subjack
+go get -u github.com/jaeles-project/gospider
 sudo snap install amass
-wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 
-wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip
 #TODO: Extract the  zip, and add to the path the tools
 wget https://testssl.sh/testssl.sh
+wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 
+wget https://github.com/michenriksen/aquatone/releases/download/v1.7.0/aquatone_linux_amd64_1.7.0.zip
 git clone https://github.com/ernw/nmap-parse-output.git
 git clone https://github.com/codingo/Interlace.git
 git clone https://github.com/aboul3la/Sublist3r.git
 git clone https://github.com/tomdev/teh_s3_bucketeers.git
 git clone https://github.com/guelfoweb/knock.git
 git clone https://github.com/stanislav-web/OpenDoor.git
+git clone https://github.com/s0md3v/Corsy.git
 git clone https://github.com/GerbenJavado/LinkFinder.git
 git clone https://github.com/s0md3v/Photon.git
 git clone https://github.com/jobertabma/virtual-host-discovery.git
@@ -48,4 +49,9 @@ git clone https://github.com/bl4ckmamb4/OpenRelayMagic.git
 git clone https://github.com/s0md3v/XSStrike.git
 git clone https://github.com/securing/DumpsterDiver.git
 git clone https://github.com/daylen/api-key-detect.git
+git clone https://github.com/RUB-NDS/CORStest.git
+git clone https://github.com/s0md3v/Corsy.git
+git clone https://github.com/gildasio/h2t
+dirb
+sslscan
 #TODO; go to repo and install the tool, and add to the path
