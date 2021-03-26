@@ -20,9 +20,10 @@ go get -u github.com/tomnomnom/assetfinder
 go get github.com/hakluke/hakrawler
 go get github.com/tismayil/ohmybackup
 go get github.com/tismayil/fockcache
-go get https://github.com/michenriksen/gitrob
+go get github.com/michenriksen/gitrob
 go get github.com/haccer/subjack
 go get -u github.com/jaeles-project/gospider
+go get github.com/projectdiscovery/subfinder/v2/cmd/subfinder
 sudo snap install amass
 #TODO: Extract the  zip, and add to the path the tools
 wget https://testssl.sh/testssl.sh
@@ -52,6 +53,7 @@ git clone https://github.com/daylen/api-key-detect.git
 git clone https://github.com/RUB-NDS/CORStest.git
 git clone https://github.com/s0md3v/Corsy.git
 git clone https://github.com/gildasio/h2t
-dirb
-sslscan
+git clone https://github.com/rbsec/sslscan.git
+git clone https://github.com/laramies/theHarvester.git
+git clone https://github.com/maurosoria/dirsearch.git
 #TODO; go to repo and install the tool, and add to the path
