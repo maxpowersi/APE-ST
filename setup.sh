@@ -1,6 +1,7 @@
 mkdir ape-tools
 cd ape-tools
 apt install xsltproc
+apt install xvfb
 apt install nmap
 apt install ncrack
 apt install nikto
