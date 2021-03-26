@@ -35,7 +35,7 @@ echo "\e[92m--- Running dirhunt for target: _TARGET_ ---\e[0m"
 dirhunt -t _THREADS_ "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.dirhunt.txt"
 
 echo "\e[92m--- Running h2t for target: _TARGET_ ---\e[0m"
-h2t scan "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.h2t.txt"
+h2t.py scan "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.h2t.txt"
 
 echo "\e[92m--- Running corsyr for target: _TARGET_ ---\e[0m"
 corsy.py -u "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.corsy.txt"
