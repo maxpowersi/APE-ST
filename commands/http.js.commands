@@ -5,9 +5,9 @@ echo "\e[92m--- Running retire for target: _TARGET_ ---\e[0m"
 retire --jspath "_OUTPUT_/_PROTOCOL_/JS/" --outputformat "text" --outputpath "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.retire.txt"
 
 echo "\e[92m--- Running DumpsterDivery_detect for target: _TARGET_ ---\e[0m"
-DumpsterDiver -p "_OUTPUT_/_PROTOCOL_/JS/" -o "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.dumpsterDiver.txt"
+DumpsterDiver.py -p "_OUTPUT_/_PROTOCOL_/JS/" -o "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.dumpsterDiver.txt"
 
 echo "\e[92m--- Running js-beautify and api_key_detect for target: _TARGET_ ---\e[0m"
 mkdir "_OUTPUT_/_PROTOCOL_/JS/beautify"
 for f in _OUTPUT_/_PROTOCOL_/JS/*.js; do n="$(basename $f)"; js-beautify f > "_OUTPUT_/_PROTOCOL_/JS/beautify/$n.beautify.js"; done
-api_key_detect "_OUTPUT_/_PROTOCOL_/JS/beautify" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.api_key_detect.txt"
+api_key_detect.py "_OUTPUT_/_PROTOCOL_/JS/beautify" > "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.api_key_detect.txt"
