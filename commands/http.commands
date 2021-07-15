@@ -59,3 +59,8 @@ fockcache --hostname "_PROTOCOL_://_TARGET_:_PORT_" > "_OUTPUT_/_PROTOCOL_/_TARG
 
 echo "\e[92m--- Running linkfinder for target: _TARGET_ ---\e[0m"
 linkfinder.py -d -i "_PROTOCOL_://_TARGET_:_PORT_" -o "_OUTPUT_/_PROTOCOL_/_TARGET_._PORT_.linkFinder.html"
+
+echo "\e[92m--- Running aem_discoverer for target: _TARGET_ ---\e[0m"
+echo _PROTOCOL_://_TARGET_:_PORT_ > /tmp/aem_list.txt
+aem_discoverer.py --file /tmp/aem_list.txt --workers 150
+rm /tmp/aem_list.txt

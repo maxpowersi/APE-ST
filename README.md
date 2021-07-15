@@ -70,6 +70,7 @@ The HTTP Scaner is divide in sequencial 3 pipelines.
 - XSStrike
 - fockcache
 - linkfinder
+- aem_hacker (aem vuls scan)
 ### Second Pipeline (JS Scan)
 - retire
 - js-beautify
